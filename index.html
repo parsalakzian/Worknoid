@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html>
 <head>
   <!--
@@ -33,7 +33,7 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "129431931";
+    const serviceWorkerVersion = "2731321759";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
@@ -42,7 +42,7 @@
 
 
 
-  <div class="pl">
+  <div class="pl" id="loading">
     <div class="pl__dot"></div>
     <div class="pl__dot"></div>
     <div class="pl__dot"></div>
@@ -243,7 +243,6 @@
 
 
 
-
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
@@ -252,15 +251,16 @@
           serviceWorkerVersion: serviceWorkerVersion,
         },
         onEntrypointLoaded: function(engineInitializer) {
+          let config = {
+            renderer: "html",
+          };
           engineInitializer.initializeEngine().then(function(appRunner) {
             appRunner.runApp();
+            
           });
         }
       });
     });
-  </script>
-  <script type="text/javascript">
-      window.flutterWebRenderer = "html"; 
   </script>
 </body>
 </html>
