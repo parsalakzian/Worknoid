@@ -33,7 +33,7 @@
 
   <script>
     // The value below is injected by flutter build, do not touch.
-    const serviceWorkerVersion = "2731321759";
+    const serviceWorkerVersion = "2771245907";
   </script>
   <!-- This script adds the flutter initialization JS code -->
   <script src="flutter.js" defer></script>
@@ -240,9 +240,14 @@
     
   </style>
 
+  <script>
+    const regExp = new RegExp("bot|google|baidu|bing|msn|teoma|slurp|yandex", "i");
+    if (regExp.test(navigator.userAgent)) {
+      window.flutterWebRenderer = "html";
+    }
+  </script>
 
-
-
+ 
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
